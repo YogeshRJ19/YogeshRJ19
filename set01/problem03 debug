@@ -1,0 +1,83 @@
+PS C:\Users\YOGESH R J\OneDrive\Desktop\PSC2sem\YogeshRJ19\set01> gdb .\problem03.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+.\problem03.exe: No such file or directory.
+(gdb) q
+PS C:\Users\YOGESH R J\OneDrive\Desktop\PSC2sem\YogeshRJ19\set01> gcc -g -O0 problem03.c -o problem03.exe
+PS C:\Users\YOGESH R J\OneDrive\Desktop\PSC2sem\YogeshRJ19\set01> pwd
+
+Path
+----
+C:\Users\YOGESH R J\OneDrive\Desktop\PSC2sem\YogeshRJ19\set01
+
+
+PS C:\Users\YOGESH R J\OneDrive\Desktop\PSC2sem\YogeshRJ19\set01> git add "problem03.c"
+PS C:\Users\YOGESH R J\OneDrive\Desktop\PSC2sem\YogeshRJ19\set01> git commit -m "test"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../viva.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\YOGESH R J\OneDrive\Desktop\PSC2sem\YogeshRJ19\set01> git push
+Everything up-to-date
+PS C:\Users\YOGESH R J\OneDrive\Desktop\PSC2sem\YogeshRJ19\set01> gdb .\problem03.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\YOGESH R J\OneDrive\Desktop\PSC2sem\YogeshRJ19\set01\problem03.exe...done.
+(gdb) l
+1       #include <stdio.h>
+2       int input();
+3       int add(int a, int b);
+4       void output(int a, int b, int sum);
+5       int main()
+6       {
+7           int a,b;
+8           a=input();
+9           b=input();
+10          int sum;
+(gdb) l
+11          sum=add(a,b);
+12          output(a,b,sum);
+13          return 0;
+14      }
+15      int input()
+16      {
+17          int n;
+18          printf("Enter a number");
+19          scanf("%d",&n);
+20          return n;
+(gdb) l
+21      }
+22      int add (int a, int b)
+23      {
+24          int sum=a+b;
+25          return sum;
+26      }
+27      void output(int a, int b, int sum)
+28      {
+29          printf("The sum of %d and %d is %d",a,b,sum);
+30      }(gdb) r
+Starting program: C:\Users\YOGESH R J\OneDrive\Desktop\PSC2sem\YogeshRJ19\set01/.\problem03.exe
+[New Thread 12352.0x1114]
+[New Thread 12352.0x4470]
+Enter a number2
+Enter a number2
+The sum of 2 and 2 is 4[Inferior 1 (process 12352) exited normally]
+(gdb) q
